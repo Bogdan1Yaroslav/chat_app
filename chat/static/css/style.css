@@ -38,25 +38,39 @@ body {
   justify-content: center;
   margin: 0px;
   width: 100vw;
-  background-image: url("/static/images/Blur.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*background-size: 1440px 1024px;*/
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*                         Login/Register styles                            */
+
+.log_auth_body {
+    background-image: url("/static/images/Blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.login_form_div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
 
 
-
-
 .login_form {
-    position: fixed;
     font-family: 'Open Sans';
-/*    top: 50%;
-    left: 50%;*/
     background-color: #FFFFFF;
-    padding: 26px 30px;
+    padding: 26px 30px 40px 30px;
     box-shadow: 0px 40px 30px 10px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 1px #E5E5EA;
     border-radius: 10px;
+
+}
+
+
+.login_form_p {
+  text-align: center;
 
 }
 
@@ -67,6 +81,8 @@ body {
 
 
 .login_btn {
+    position: fixed;
+    left: 30%;
     margin: 0, auto;
     color: #FFFFFF;
     font-family: 'Open Sans';

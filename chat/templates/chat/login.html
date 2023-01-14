@@ -7,14 +7,17 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/normalize.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
 </head>
-<body>
+<body class="log_auth_body">
 
-    <form class="login_form" method="post">
-        <p>Авторизация</p>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="login_btn" type="submit">Login</button>
+    <div class="login_form_div">
+        <form class="login_form" method="post">
+            <p class="login_form_p">Authorization</p>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="login_btn" type="submit">Login</button>
+        </form>
+    </div>
 
-    </form>
+
 </body>
 </html>

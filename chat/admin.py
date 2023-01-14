@@ -5,7 +5,17 @@ from .models import Chat, UserChat, Message
 
 @admin.register(Chat)
 class ChatAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+        "id",
+        "name",
+        "get_users",
+        "created_at"
+    ]
+
+    search_fields = ["name"]
+
+    def get_users(self, obj):
+        return "\n".join([user.username for user in obj.users.all()])
 
 
 @admin.register(UserChat)

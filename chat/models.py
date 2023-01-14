@@ -19,8 +19,6 @@ class UserChat(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     is_admin = models.BooleanField(default=False)
 
-    # updated_at
-
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['user', 'chat'], name='Unique user in chat')
@@ -29,6 +27,7 @@ class UserChat(models.Model):
 
 class Message(models.Model):
     message = models.TextField()
+    # Потом поменять on_delete чтобы сообщение сохранялось при удалении пользователя!
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages')
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE, related_name='messages')
     send_at = models.DateTimeField(auto_now_add=True)
