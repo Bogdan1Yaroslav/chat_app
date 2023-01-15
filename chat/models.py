@@ -30,4 +30,7 @@ class Message(models.Model):
     # Потом поменять on_delete чтобы сообщение сохранялось при удалении пользователя!
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages')
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE, related_name='messages')
-    send_at = models.DateTimeField(auto_now_add=True)
+    sent_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.author.username}: {self.message} [{self.sent_at}]'
