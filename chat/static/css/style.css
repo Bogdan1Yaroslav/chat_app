@@ -96,3 +96,24 @@ body {
 
 
 }
+
+
+.user_chats_ul {
+    display: flex;
+    list-style: none;
+}
+
+.select_or_create_chat_frm {
+    width: 546px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.chat_url {
+    padding: 2px;
+    border: 1px solid black;
+    margin-right: 15px;
+    border-radius: 5px;
+}

@@ -20,7 +20,13 @@ class ChatAdmin(admin.ModelAdmin):
 
 @admin.register(UserChat)
 class UserChatAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+        "id",
+        "user",
+        "chat",
+        "created_at",
+        "is_admin",
+    ]
 
 
 @admin.register(Message)
