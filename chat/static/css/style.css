@@ -117,3 +117,8 @@ body {
     margin-right: 15px;
     border-radius: 5px;
 }
+
+
+.messages-list {
+    list-style-type: none;
+}

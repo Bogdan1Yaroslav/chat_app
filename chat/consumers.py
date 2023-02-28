@@ -1,5 +1,6 @@
 import json
 from asgiref.sync import sync_to_async
+from channels.db import database_sync_to_async
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
 from .models import Chat, Message
 
@@ -24,11 +25,11 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
         await self.accept()
 
-    @sync_to_async
+    @database_sync_to_async
     def get_chat(self, room_name):
         return Chat.objects.get(name=room_name)
 
-    @sync_to_async
+    @database_sync_to_async
     def save_message(self, msg):
         Message.objects.create(message=msg, author=self.user, chat=self.room)
         print(f"Message has successfully saved! {msg}")
