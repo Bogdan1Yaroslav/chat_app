@@ -51,6 +51,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_user_agents.middleware.UserAgentMiddleware",
+    "chat_app.middleware.custom_session_middleware.CustomSessionMiddleware",
+
 ]
 
 ROOT_URLCONF = 'chat_app.urls'
