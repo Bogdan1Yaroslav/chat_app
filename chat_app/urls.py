@@ -18,7 +18,8 @@ from django.urls import include, path
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='chat/')),
-    path('chat/', include('chat.urls')),
+    # path('', RedirectView.as_view(url='chat/')),
+    # path('chat/', include('chat.urls')),
+    path('', include('chat.urls')),
     path('admin/', admin.site.urls),
 ]
