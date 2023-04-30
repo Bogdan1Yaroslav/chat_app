@@ -1,0 +1,11 @@
+{% block title %}
+    App {{ requested_app.app_name }} is under maintenance...
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>App {{ requested_app.app_name }} is under maintenance...</h1>
+    <h2>Reason: {{ requested_app.app_disable_reason}}</h2>
+    <p>Estimated recovery time: {{ requested_app.estimated_recovery_time}}</p>
+</div>
+{% endblock %}

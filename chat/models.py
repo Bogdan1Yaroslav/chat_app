@@ -1,8 +1,21 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
+from django.apps import apps
 
 User = get_user_model()
+
+
+class AppBlock(models.Model):
+    DJANGO_APPS = [(app.name, app.verbose_name) for app in apps.get_app_configs() if not app.name.startswith("django")]
+
+    app_name = models.CharField(max_length=300, choices=tuple(DJANGO_APPS))
+    app_disable_reason = models.TextField()
+    estimated_recovery_time = models.DateTimeField()
+
+    class Meta:
+        verbose_name_plural = "Блокировка приложений"
+        verbose_name = "Блокировки приложений"
 
 
 class Chat(models.Model):
